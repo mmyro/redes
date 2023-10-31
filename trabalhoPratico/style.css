@@ -8,7 +8,6 @@
 }
 
 body {
-    margin-top: 10%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -22,12 +21,6 @@ body {
 h1 {
     font-size: 50px;
     line-height: 64px;
-    color: #222;
-}
-
-h2 {
-    font-size: 46px;
-    line-height: 54px;
     color: #222;
 }
 
@@ -104,20 +97,104 @@ p {
     color: #088178;
 }
 
-.wrapper{
+.wrapper {
     position: relative;
     width: 400px;
-    height: 440px;
+    height: 380px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     display: flex;
-    justify-content: center;
+    justify-content: center
 }
 
-.wrapper .form-box{
+.wrapper .form-box {
     width: 100%;
     padding: 40px;
+}
+
+.form-box h2 {
+    font-size: 2rem;
+    color: #162938;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 25px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #fff;
+    outline: none;
+    border-radius: 40px;
+}
+
+.input-box .icon {
+    position: relative;
+    top: 40px;
+    left: 40px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.input-box label {
+    position: absolute;
+    top: 100%;
+    left: 25%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #fff;
+    pointer-events: none;
+}
+
+.wrapper .btn{
+    margin-top: 7%;
+    height: 50px;
+    width: 315px;
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid #252525;
+    overflow: hidden;
+    border-radius: 40px;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-txt {
+    z-index: 1;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.type1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+    background-color: #333;
+    border-radius: 30px;
+    visibility: hidden;
+    height: 10px;
+    width: 10px;
+    z-index: -1;
+}
+
+.btn:hover {
+    box-shadow: 1px 1px 200px #252525;
+    color: #fff;
+    border: none;
+}
+
+.type1:hover::after {
+    visibility: visible;
+    transform: scale(100) translateX(2px);
 }
